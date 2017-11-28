@@ -14,4 +14,28 @@ Opdracht Web Research Periode 2 Proof Of Concept.
     * https://developer.github.com/v3/
 - Finding Resemblance in code trough github:
 ![](_screenshots/git_code_resemblance.PNG)
+![](_screenshots/git_codefinding_2.PNG)
+### 28/11/2017
+- Code terugvinden op het internet
+    * https://searchcode.com/
+- Github API aanspreken om zo code terug te vinden in verschillende repo's?
+- Probleem:
+![](_screenshots/git_api_searchproblem.PNG)
+- Documentatie hierover:
+    * https://libraries.io/github/ainthek/git-search
+    * https://help.github.com/articles/about-searching-on-github/
+    * https://news.ycombinator.com/item?id=12439499
+    * https://github.com/octokit/octokit.rb/issues/380
+    * https://developer.github.com/changes/2013-10-18-new-code-search-requirements/
+    * https://stackoverflow.com/questions/28402926/using-github-search-api-without-specifying-the-repository-or-organization
+- Andere interessante bronnen:
+    * https://code.google.com/
+    * https://github.com/google/codesearch
+    * https://about.sourcegraph.com/
+    * http://opensearch.krugle.org/
+    * https://developer.atlassian.com/bitbucket/api/2/reference/resource/snippets
+- Google Search Code had een handige geweest MAAR! Is opgeheven :pensive:
+    * https://nl.wikipedia.org/wiki/Google_Code_Search
+- Toevoegen eerste versie idee in klad
+![](_idee/idee_note_v1.jpg)
 
