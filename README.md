@@ -45,5 +45,6 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 - Probleem met UserAgent opgelost 
     * https://davidwalsh.name/set-user-agent-php-curl-spoof
 - Checkcode.php laat nu alle repositories zien waar de zoekterm in terug komt .
-
+- Per ongeluk OAuth Meegecommit
+![](_screenshots/git_oauthincommit.PNG)
 
