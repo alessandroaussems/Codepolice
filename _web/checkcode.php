@@ -1,8 +1,9 @@
 <?php
-$ACCESTOKEN="2d23e0f98ecaf04a6bb8fd13e65b4ca5a3ca96ab";
-//if(isset($_POST["codetocheck"]))
-//{
-    $thecodetocheck="Alessandro Aussems";//$_POST["codetocheck"];
+$ACCESTOKEN=file_get_contents("./oauthcode.txt");
+$GITHUB_REPOS=[];
+if(isset($_POST["codetocheck"]))
+{
+    $thecodetocheck=$_POST["codetocheck"];
     //URL TO CALL GITHUB API
     $url = 'https://api.github.com/search/code?q='.urlencode($thecodetocheck).'&access_token='.$ACCESTOKEN;
     //DO CURL TO CALL GITHUB API
@@ -17,8 +18,8 @@ $ACCESTOKEN="2d23e0f98ecaf04a6bb8fd13e65b4ca5a3ca96ab";
     $response = json_decode($responseJson);
     for($i=0;$i<count($response->items);$i++)
     {
-        var_dump($response->items[$i]->repository->full_name);
-        echo "<br>";
+        array_push($GITHUB_REPOS, $response->items[$i]->repository->full_name);
     }
-//}
+    echo json_encode($GITHUB_REPOS);
+}
 ?>
