@@ -47,4 +47,7 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 - Checkcode.php laat nu alle repositories zien waar de zoekterm in terug komt .
 - Per ongeluk OAuth Meegecommit
 ![](_screenshots/git_oauthincommit.PNG)
+- Basic CSS Added
+- Ajaxcall returned nu een lijst van repo's waar de code in wordt gevonden
+- OAuthCode in aparte textfile gestoken en deze in de .gitignore gestoken zodat deze niet mee wordt gecommit.
 
