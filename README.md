@@ -38,4 +38,12 @@ Opdracht Web Research Periode 2 Proof Of Concept.
     * https://nl.wikipedia.org/wiki/Google_Code_Search
 - Toevoegen eerste versie idee in klad
 ![](_idee/idee_note_v1.jpg)
+### 5/12/2017
+- Uitproberen GithubAPI
+- Aanmaken Accestokens voor API (Anders kan er niet gezocht worden)
+- Problemen met UserAgent Header in APi
+- Probleem met UserAgent opgelost 
+    * https://davidwalsh.name/set-user-agent-php-curl-spoof
+- Checkcode.php laat nu alle repositories zien waar de zoekterm in terug komt .
+
 
