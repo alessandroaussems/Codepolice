@@ -46,22 +46,105 @@
             padding: 5px;
             background-color: #FE0000;
         }
+        .loader {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            position: relative;
+            border: 4px solid #FE0000;
+            top: 50%;
+            animation: loader 2s infinite ease;
+        }
+
+        .loader-inner {
+            vertical-align: top;
+            display: inline-block;
+            width: 100%;
+            background-color: #FE0000;
+            animation: loader-inner 2s infinite ease-in;
+        }
+
+        @keyframes loader {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(180deg);
+            }
+
+            50% {
+                transform: rotate(180deg);
+            }
+
+            75% {
+                transform: rotate(360deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes loader-inner {
+            0% {
+                height: 0%;
+            }
+
+            25% {
+                height: 0%;
+            }
+
+            50% {
+                height: 100%;
+            }
+
+            75% {
+                height: 100%;
+            }
+
+            100% {
+                height: 0%;
+            }
+        }
+        #loader
+        {
+            margin-top: 150px;
+            height: 100%;
+            text-align: center;
+        }
+        .nodisplay
+        {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
 <h1>Codepolice</h1>
+<div id="loader" class="nodisplay">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
 <textarea name="code" id="code" rows="15" placeholder="Enter code here!"></textarea>
 <button id="go" onclick="CheckTheCode()">Check the code!</button>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
+    var textfield=document.getElementById("code");
+    var button=document.getElementById("go");
+    var loader=document.getElementById("loader");
     function CheckTheCode()
     {
+        textfield.classList.add("nodisplay");
+        button.classList.add("nodisplay");
+        loader.classList.remove("nodisplay");
         var code= document.getElementById("code").value;
         $.ajax({
             type: "POST",
             url: './checkcode.php',
             data: {codetocheck: code},
             success: function(response) {
+                textfield.classList.remove("nodisplay");
+                button.classList.remove("nodisplay");
+                loader.classList.add("nodisplay");
                 var githubrepos=JSON.parse(response);
                 console.log(githubrepos);
             }

@@ -20,6 +20,7 @@ if(isset($_POST["codetocheck"]))
     {
         array_push($GITHUB_REPOS, $response->items[$i]->repository->full_name);
     }
+    sleep(10); //ADDING THIS BECAUSE IT HAS TO LOOK LIKE THE APPLICATION IS VERY BUSY!
     echo json_encode($GITHUB_REPOS);
 }
 ?>

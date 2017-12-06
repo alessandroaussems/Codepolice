@@ -50,4 +50,6 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 - Basic CSS Added
 - Ajaxcall returned nu een lijst van repo's waar de code in wordt gevonden
 - OAuthCode in aparte textfile gestoken en deze in de .gitignore gestoken zodat deze niet mee wordt gecommit.
-
+### 6/12/2017
+- Loadinganimation toegevoegd wanneer er word gezocht.
+- Sleep in checkcodescript zodat het lijkt dat de applicatie zeer hard werkt :tongue:
