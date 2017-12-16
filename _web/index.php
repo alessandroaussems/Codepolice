@@ -117,6 +117,17 @@
         {
             display: none !important;
         }
+        .alert {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            margin-top: 50px;
+            width: 50%;
+            display: block;
+            background-color: #24292E;
+            color: white;
+            margin-bottom: 15px;
+        }
     </style>
 </head>
 <body>
@@ -126,6 +137,9 @@
 </div>
 <textarea name="code" id="code" rows="15" placeholder="Enter code here!"></textarea>
 <button id="go" onclick="CheckTheCode()">Check the code!</button>
+<div class="alert nodisplay">
+    <p id="responsetext"></p>
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     var textfield=document.getElementById("code");
@@ -133,22 +147,35 @@
     var loader=document.getElementById("loader");
     function CheckTheCode()
     {
-        textfield.classList.add("nodisplay");
-        button.classList.add("nodisplay");
-        loader.classList.remove("nodisplay");
+        HideInputField();
         var code= document.getElementById("code").value;
         $.ajax({
             type: "POST",
             url: './checkcode.php',
             data: {codetocheck: code},
             success: function(response) {
-                textfield.classList.remove("nodisplay");
-                button.classList.remove("nodisplay");
-                loader.classList.add("nodisplay");
                 var githubrepos=JSON.parse(response);
-                console.log(githubrepos);
+                ShowResponseText("Your code hass occurences in "+githubrepos+" Github repositories.")
             }
         })
+    }
+    function ShowResponseText($texttodisplay)
+    {
+        loader.classList.add("nodisplay"); //remove loaderanimation from the page
+        var responsetext=document.getElementById("responsetext");
+        responsetext.innerHTML=$texttodisplay;
+        document.getElementsByClassName("alert")[0].classList.remove("nodisplay"); //
+    }
+    function HideInputField()
+    {
+        textfield.classList.add("nodisplay");
+        button.classList.add("nodisplay");
+        loader.classList.remove("nodisplay");
+    }
+    function ShowInputField()
+    {
+        textfield.classList.remove("nodisplay");
+        button.classList.remove("nodisplay");
     }
 </script>
 </body>

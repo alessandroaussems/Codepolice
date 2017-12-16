@@ -1,6 +1,7 @@
 <?php
 $ACCESTOKEN=file_get_contents("./oauthcode.txt");
 $GITHUB_REPOS=[];
+$NUMBERGITHUBREPOS=0;
 if(isset($_POST["codetocheck"]))
 {
     $thecodetocheck=$_POST["codetocheck"];
@@ -16,11 +17,16 @@ if(isset($_POST["codetocheck"]))
     curl_close($ch);
     //GET FINAL JSON RESPONSE
     $response = json_decode($responseJson);
+    //ADD ALL GITHUB URL'S TO ARRAY
     for($i=0;$i<count($response->items);$i++)
     {
         array_push($GITHUB_REPOS, $response->items[$i]->repository->full_name);
     }
+    //COUNT NUMBER OF GITHUBREPOS
+    $NUMBERGITHUBREPOS=count($GITHUB_REPOS);
+
+
     sleep(10); //ADDING THIS BECAUSE IT HAS TO LOOK LIKE THE APPLICATION IS VERY BUSY!
-    echo json_encode($GITHUB_REPOS);
+    echo json_encode($NUMBERGITHUBREPOS);
 }
 ?>

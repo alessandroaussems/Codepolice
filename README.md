@@ -53,3 +53,7 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 ### 6/12/2017
 - Loadinganimation toegevoegd wanneer er word gezocht.
 - Sleep in checkcodescript zodat het lijkt dat de applicatie zeer hard werkt :tongue:
+### 16/12/2017
+- Backend for codesearch aanpassen
+- Message tonen in hoeveel github repo's de code voorkomt.
+- More CSS, zodat da spel er een beetje deftig uitziet
