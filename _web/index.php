@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <title>Codepolice V0.1</title>
+    <link rel="icon"
+          type="image/png"
+          href="favico.png">
     <style>
         body
         {

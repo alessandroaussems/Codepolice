@@ -57,3 +57,6 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 - Backend for codesearch aanpassen
 - Message tonen in hoeveel github repo's de code voorkomt.
 - More CSS, zodat da spel er een beetje deftig uitziet
+### 18/12/2017
+- Added Favico
+- Some Testing
