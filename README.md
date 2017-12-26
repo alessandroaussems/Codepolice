@@ -71,3 +71,8 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 - Restart mogelijkheid
 - OPGELET! Invoeren van github URL is niet verplicht!!!!!!
 - Logica om zodat URL niet verplicht is => Errors verwijderd door IF loop
+- Research of er een Code Search API is van Bitbucket
+- Research of er een Code Search API is van Stackoverflow.
+- Weining informatie over te vinden => Overgeschakeld op de vaste hulplijn
+- => Stackoverflow vraag gesteld over dit onderwerp
+- https://stackoverflow.com/questions/47983528/code-search-like-github-on-bitbucket-stackoverflow
