@@ -7,19 +7,27 @@ if(isset($_POST["codetocheck"]))
 {
     $thecodetocheck=$_POST["codetocheck"];
     $theurltocheck=$_POST["urltocheck"];
+    if($theurltocheck!="")
+    {
+        //URL FOR GITHUB FORKS
+        $repourl= "https://api.github.com/repos/".$theurltocheck."/forks";
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $repourl);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        // SETTING USER AGENT BECAUSE GITHUB API SECURITY
+        curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
+        $responseJson = curl_exec($ch);
+        curl_close($ch);
+        //GET FINAL JSON RESPONSE OF FORKS
+        $forks = json_decode($responseJson);
 
+        $RESPONSE[1]=count($forks); //COUNTING FORKS OP GITHUBURL
+    }
+    else
+    {
+        $RESPONSE[1]="ZERO";
+    }
 
-    //URL FOR GITHUB FORKS
-    $repourl= "https://api.github.com/repos/".$theurltocheck."/forks";
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $repourl);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-    // SETTING USER AGENT BECAUSE GITHUB API SECURITY
-    curl_setopt($ch,CURLOPT_USERAGENT,'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.1.13) Gecko/20080311 Firefox/2.0.0.13');
-    $responseJson = curl_exec($ch);
-    curl_close($ch);
-    //GET FINAL JSON RESPONSE OF FORKS
-    $forks = json_decode($responseJson);
 
 
     //URL TO CALL GITHUB API
@@ -46,7 +54,6 @@ if(isset($_POST["codetocheck"]))
 
     //BUILD RESPONSE ARRAY
     $RESPONSE[0]=$NUMBERGITHUBREPOS;
-    $RESPONSE[1]=count($forks); //COUNTING FORKS OP GITHUBURL
 
     echo json_encode($RESPONSE);
 }

@@ -70,3 +70,4 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 - Reponse terugeven + weergeven aantal forks van githuburl
 - Restart mogelijkheid
 - OPGELET! Invoeren van github URL is niet verplicht!!!!!!
+- Logica om zodat URL niet verplicht is => Errors verwijderd door IF loop
