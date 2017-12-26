@@ -46,6 +46,7 @@ if(isset($_POST["codetocheck"]))
 
     //BUILD RESPONSE ARRAY
     $RESPONSE[0]=$NUMBERGITHUBREPOS;
+    $RESPONSE[1]=count($forks); //COUNTING FORKS OP GITHUBURL
 
     echo json_encode($RESPONSE);
 }
