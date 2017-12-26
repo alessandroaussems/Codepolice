@@ -60,3 +60,13 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 ### 18/12/2017
 - Added Favico
 - Some Testing
+### 26/12/2017
+- Styling van restart mogelijkheid
+- Styling van inputveld voor de gekende Githubrepo URL
+- Ingevoerde URL "strippen" van https://github.com/
+- Github API roepen om zo de forks van de gekende url op te vragen
+- Forks tellen
+- Response array opbouwen 
+- Reponse terugeven + weergeven aantal forks van githuburl
+- Restart mogelijkheid
+- OPGELET! Invoeren van github URL is niet verplicht!!!!!!

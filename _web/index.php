@@ -22,7 +22,7 @@
             width: 100%;
             text-align: center;
         }
-        textarea
+        textarea, input
         {
             font-family: 'Arvo', serif;
             width: 50%;
@@ -33,13 +33,18 @@
             border: 3px solid black;
             color: black;
         }
+        input
+        {
+            margin-top: 25px;
+            margin-bottom: 50px;
+        }
         *::placeholder {
             color: black;
         }
         *:focus {
             outline: none;
         }
-        #go
+        #go, #restart
         {
             font-family: 'Arvo', serif;
             width: 10%;
@@ -48,6 +53,12 @@
             border: 5px solid #FE0000;
             padding: 5px;
             background-color: #FE0000;
+        }
+        #restart
+        {
+            text-decoration: none;
+            color:black;
+            text-align: center;
         }
         .loader {
             display: inline-block;
@@ -139,26 +150,34 @@
     <span class="loader"><span class="loader-inner"></span></span>
 </div>
 <textarea name="code" id="code" rows="15" placeholder="Enter code here!"></textarea>
+<input type="text" id="repo" placeholder="Enter Githubrepo URL here!">
 <button id="go" onclick="CheckTheCode()">Check the code!</button>
 <div class="alert nodisplay">
     <p id="responsetext"></p>
 </div>
+<a href="javascript:window.location.reload(true)" class="nodisplay" id="restart">Search Again</a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     var textfield=document.getElementById("code");
+    var inputfield=document.getElementById("repo");
     var button=document.getElementById("go");
     var loader=document.getElementById("loader");
     function CheckTheCode()
     {
         HideInputField();
-        var code= document.getElementById("code").value;
+        var code= textfield.value;
+        var repoURL= inputfield.value;
         $.ajax({
             type: "POST",
             url: './checkcode.php',
-            data: {codetocheck: code},
+            data: {codetocheck: code, urltocheck: repoURL.replace("https://github.com/", "")},
             success: function(response) {
-                var githubrepos=JSON.parse(response);
-                ShowResponseText("Your code hass occurences in "+githubrepos+" Github repositories.")
+                var RESPONSE=JSON.parse(response);
+                var githubrepos=RESPONSE[0];
+                console.log(RESPONSE[1]);
+                ShowResponseText("Your code hass occurences in "+githubrepos+" Github repositories.<br> " +
+                    "And has "+RESPONSE[1]+" fork(s)");
+                MakePageReadyForReload();
             }
         })
     }
@@ -172,13 +191,13 @@
     function HideInputField()
     {
         textfield.classList.add("nodisplay");
+        inputfield.classList.add("nodisplay");
         button.classList.add("nodisplay");
         loader.classList.remove("nodisplay");
     }
-    function ShowInputField()
+    function MakePageReadyForReload()
     {
-        textfield.classList.remove("nodisplay");
-        button.classList.remove("nodisplay");
+        document.getElementById("restart").classList.remove("nodisplay");
     }
 </script>
 </body>
