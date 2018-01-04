@@ -14,7 +14,7 @@
         body
         {
             font-family: 'Arvo', serif;
-            background: #0000FF;
+            background:rgba(0,0,255,0.75)
         }
         h1
         {

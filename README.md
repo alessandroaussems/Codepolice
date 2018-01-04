@@ -77,4 +77,5 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 - => Stackoverflow vraag gesteld over dit onderwerp
 - https://stackoverflow.com/questions/47983528/code-search-like-github-on-bitbucket-stackoverflow
 ### 04/01/2017
-- Added Images in header because it looks nice :p
+- Added Images in header because it looks nice :tongue:
+- Transparantie in background want deed pijn aan de ogen
