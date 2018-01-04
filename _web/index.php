@@ -176,9 +176,11 @@
             url: './checkcode.php',
             data: {codetocheck: code, urltocheck: repoURL.replace("https://github.com/", "")},
             success: function(response) {
+                console.log(response);
                 var RESPONSE=JSON.parse(response);
                 var githubrepos=RESPONSE[0];
                 console.log(RESPONSE[1]);
+                console.log(RESPONSE[2]);
                 ShowResponseText("Your code hass occurences in "+githubrepos+" Github repositories.<br> " +
                     "And has "+RESPONSE[1]+" fork(s)");
                 MakePageReadyForReload();

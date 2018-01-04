@@ -80,3 +80,24 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 - Added Images in header because it looks nice :tongue:
 - Transparantie in background want deed pijn aan de ogen
 - Structural Fixes
+- STACKEXCHANGE API gebruiken
+https://api.stackexchange.com/
+- Gebruik maken van de "search" functionaliteit
+https://api.stackexchange.com/docs/search#order=desc&sort=relevance&intitle=Laravel%20Cronjob%20Dailyat%20not%20working&filter=default&site=stackoverflow&run=true
+- 2de optie was om gebruik te maken van de "Advanced Search"
+https://api.stackexchange.com/docs/advanced-search#order=desc&sort=relevance&q=protected%20function%20schedule(Schedule%20%24schedule)&filter=default&site=stackoverflow&run=true
+- Gekozen voor de 2de mogelijkheid => Niet altijd juiste resultaten maar ze zijn wel accuraat
+- Aanvragen van authenticatie op de API te kunnen gebruiken
+https://stackapps.com/apps/oauth/register
+- Hoe een API-call maken?
+https://stackapps.com/questions/4699/how-to-make-a-stack-exchange-api-call-using-my-key
+- API beginnen te proberen gebruiken
+# ELENDIG LANG VASTGEZETEN MET DE ******* API
+- Api returnde vage tekens...
+![](_screenshots/vagetekens.PNG)
+- Reden gevonden waarom zolang vastgezeten
+- API maakt gebruik van GZIP-compressie
+=> 
+https://stackoverflow.com/questions/14825188/getting-null-as-response-from-stack-overflow-api-with-php
+Oplossing:
+![](_screenshots/solutiongzip.PNG)
