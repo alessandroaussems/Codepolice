@@ -138,9 +138,16 @@
             margin-top: 50px;
             width: 50%;
             display: block;
-            background-color: #24292E;
             color: white;
             margin-bottom: 15px;
+        }
+        .git
+        {
+            background-color: #24292E;
+        }
+        .stack
+        {
+            background-color: #F48024;
         }
         .inside
         {
@@ -154,10 +161,16 @@
     <span class="loader"><span class="loader-inner"></span></span>
 </div>
 <textarea name="code" id="code" rows="15" placeholder="Enter code here!"></textarea>
-<input type="text" id="repo" placeholder="Enter Githubrepo URL here!">
+<input type="text" id="repo"  placeholder="Enter Githubrepo URL here! If you want to count the forks it has.">
 <button id="go" onclick="CheckTheCode()">Check the code!</button>
-<div class="alert nodisplay">
-    <p id="responsetext"></p>
+<div class="alert nodisplay git">
+    <p id="responsetextgitrepo"></p>
+</div>
+<div class="alert nodisplay git">
+    <p id="responsetextgitfork"></p>
+</div>
+<div class="alert nodisplay stack">
+    <p id="responsetextstack"></p>
 </div>
 <a href="javascript:window.location.reload(true)" class="nodisplay" id="restart">Search Again</a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -178,21 +191,37 @@
             success: function(response) {
                 console.log(response);
                 var RESPONSE=JSON.parse(response);
-                var githubrepos=RESPONSE[0];
-                console.log(RESPONSE[1]);
-                console.log(RESPONSE[2]);
-                ShowResponseText("Your code hass occurences in "+githubrepos+" Github repositories.<br> " +
-                    "And has "+RESPONSE[1]+" fork(s)");
+                ShowResponseText("Your code hass occurences in "+RESPONSE[0]+" Github repositories.<br>","gitrepo");
+                if (RESPONSE[1]!="ZERO")
+                {
+                    ShowResponseText("Your code repository has "+RESPONSE[1]+" forks","gitfork");
+                }
+                ShowResponseText("Your code has occurences in "+RESPONSE[2]+" Stack questions.<br>","stack");
                 MakePageReadyForReload();
             }
         })
     }
-    function ShowResponseText($texttodisplay)
+    function ShowResponseText(texttodisplay,sort)
     {
         loader.classList.add("nodisplay"); //remove loaderanimation from the page
-        var responsetext=document.getElementById("responsetext");
-        responsetext.innerHTML=$texttodisplay;
-        document.getElementsByClassName("alert")[0].classList.remove("nodisplay"); //
+        if(sort=="gitrepo")
+        {
+            var responsetext=document.getElementById("responsetextgitrepo");
+            responsetext.innerHTML=texttodisplay;
+            document.getElementsByClassName("alert")[0].classList.remove("nodisplay"); //
+        }
+        if(sort=="gitfork")
+        {
+            var responsetext=document.getElementById("responsetextgitfork");
+            responsetext.innerHTML=texttodisplay;
+            document.getElementsByClassName("alert")[1].classList.remove("nodisplay"); //
+        }
+        if(sort=="stack")
+        {
+            var responsetext=document.getElementById("responsetextstack");
+            responsetext.innerHTML=texttodisplay;
+            document.getElementsByClassName("alert")[2].classList.remove("nodisplay"); //
+        }
     }
     function HideInputField()
     {

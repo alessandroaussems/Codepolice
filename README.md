@@ -101,3 +101,6 @@ https://stackapps.com/questions/4699/how-to-make-a-stack-exchange-api-call-using
 https://stackoverflow.com/questions/14825188/getting-null-as-response-from-stack-overflow-api-with-php
 Oplossing:
 ![](_screenshots/solutiongzip.PNG)
+- Continue work...
+- Added frontend/styling to show different results in own box
+- Frontend for stackapi return
