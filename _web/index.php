@@ -22,6 +22,16 @@
             width: 100%;
             text-align: center;
         }
+        #error
+        {
+            width: 50%;
+            margin: 0 auto;
+            text-align: center;
+            background-color: #FE0000;
+            color: #FFFFFF;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
         textarea, input
         {
             font-family: 'Arvo', serif;
@@ -160,6 +170,7 @@
 <div id="loader" class="nodisplay">
     <span class="loader"><span class="loader-inner"></span></span>
 </div>
+<p id="error" class="nodisplay">Error</p>
 <textarea name="code" id="code" rows="15" placeholder="Enter code here!"></textarea>
 <input type="text" id="repo"  placeholder="Enter Githubrepo URL here! If you want to count the forks it has.">
 <button id="go" onclick="CheckTheCode()">Check the code!</button>
@@ -181,25 +192,37 @@
     var loader=document.getElementById("loader");
     function CheckTheCode()
     {
-        HideInputField();
         var code= textfield.value;
         var repoURL= inputfield.value;
-        $.ajax({
-            type: "POST",
-            url: './checkcode.php',
-            data: {codetocheck: code, urltocheck: repoURL.replace("https://github.com/", "")},
-            success: function(response) {
-                console.log(response);
-                var RESPONSE=JSON.parse(response);
-                ShowResponseText("Your code hass occurences in "+RESPONSE[0]+" Github repositories.<br>","gitrepo");
-                if (RESPONSE[1]!="ZERO")
-                {
-                    ShowResponseText("Your code repository has "+RESPONSE[1]+" forks","gitfork");
+        if(code=="")
+        {
+            Error("The code field cannot be empty!");
+        }
+        else if(code.length>128)
+        {
+            Error("Due to API limitations the code cannot be longer than 128chars");
+        }
+        else
+        {
+            ErrorFixed();
+            HideInputField();
+            $.ajax({
+                type: "POST",
+                url: './checkcode.php',
+                data: {codetocheck: code, urltocheck: repoURL.replace("https://github.com/", "")},
+                success: function(response) {
+                    console.log(response);
+                    var RESPONSE=JSON.parse(response);
+                    ShowResponseText("Your code hass occurences in "+RESPONSE[0]+" Github repositories.<br>","gitrepo");
+                    if (RESPONSE[1]!="ZERO")
+                    {
+                        ShowResponseText("Your code repository has "+RESPONSE[1]+" forks","gitfork");
+                    }
+                    ShowResponseText("Your code has occurences in "+RESPONSE[2]+" Stack questions.<br>","stack");
+                    MakePageReadyForReload();
                 }
-                ShowResponseText("Your code has occurences in "+RESPONSE[2]+" Stack questions.<br>","stack");
-                MakePageReadyForReload();
-            }
-        })
+            })
+        }
     }
     function ShowResponseText(texttodisplay,sort)
     {
@@ -233,6 +256,22 @@
     function MakePageReadyForReload()
     {
         document.getElementById("restart").classList.remove("nodisplay");
+    }
+    function Error(errortext)
+    {
+        var error=document.getElementById("error");
+        console.log(error);
+        error.innerHTML=errortext;
+        error.classList.remove("nodisplay");
+    }
+    function ErrorFixed()
+    {
+        var error=document.getElementById("error");
+        if(!error.classList.contains("nodisplay"))
+        {
+            error.innerHTML="Error";
+            error.classList.add("nodisplay");
+        }
     }
 </script>
 </body>
