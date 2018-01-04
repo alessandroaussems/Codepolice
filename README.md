@@ -111,3 +111,4 @@ Oplossing:
 - Manier zoeken om alle STACKvragen te krijgen
 - Added Loop trough pages
 - Nu worden alle resultaten van de stack API getoond!
+- Enhanced LoaderAnimation

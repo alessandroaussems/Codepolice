@@ -22,6 +22,15 @@
             width: 100%;
             text-align: center;
         }
+        h3, small
+        {
+            width: 100%;
+            text-align: center;
+        }
+        small
+        {
+            display: block;
+        }
         #error, #errorscript
         {
             width: 50%;
@@ -170,6 +179,10 @@
     <p id="errorscript">The CodePolice needs Javascript to be enabled to find cheaters!</p>
 </noscript>
 <h1>C<img class="inside" src="favico.png" alt="Logo Codepolice">deP<img class="inside" src="favico.png" alt="Logo Codepolice">lice</h1>
+<div id="loadertext" class="nodisplay">
+    <h3>We are crawling The Internet to find out if there is a cheater among us!</h3>
+    <small>Note: Due to the immense size of The Internet this might take a while...</small>
+</div>
 <div id="loader" class="nodisplay">
     <span class="loader"><span class="loader-inner"></span></span>
 </div>
@@ -193,6 +206,7 @@
     var inputfield=document.getElementById("repo");
     var button=document.getElementById("go");
     var loader=document.getElementById("loader");
+    var loadertext=document.getElementById("loadertext");
     function CheckTheCode()
     {
         var code= textfield.value;
@@ -230,6 +244,7 @@
     function ShowResponseText(texttodisplay,sort)
     {
         loader.classList.add("nodisplay"); //remove loaderanimation from the page
+        loadertext.classList.add("nodisplay");
         if(sort=="gitrepo")
         {
             var responsetext=document.getElementById("responsetextgitrepo");
@@ -255,6 +270,8 @@
         inputfield.classList.add("nodisplay");
         button.classList.add("nodisplay");
         loader.classList.remove("nodisplay");
+        loadertext.classList.remove("nodisplay");
+
     }
     function MakePageReadyForReload()
     {
