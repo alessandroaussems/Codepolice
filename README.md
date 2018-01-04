@@ -105,3 +105,4 @@ Oplossing:
 - Added frontend/styling to show different results in own box
 - Frontend for stackapi return
 - Added Validation because search cannot be longer than 128chars
+- Added Error when javascript is not enabled

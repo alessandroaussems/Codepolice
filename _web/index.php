@@ -22,7 +22,7 @@
             width: 100%;
             text-align: center;
         }
-        #error
+        #error, #errorscript
         {
             width: 50%;
             margin: 0 auto;
@@ -166,6 +166,9 @@
     </style>
 </head>
 <body>
+<noscript>
+    <p id="errorscript">The CodePolice needs Javascript to be enabled to find cheaters!</p>
+</noscript>
 <h1>C<img class="inside" src="favico.png" alt="Logo Codepolice">deP<img class="inside" src="favico.png" alt="Logo Codepolice">lice</h1>
 <div id="loader" class="nodisplay">
     <span class="loader"><span class="loader-inner"></span></span>
