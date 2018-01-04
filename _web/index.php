@@ -142,10 +142,14 @@
             color: white;
             margin-bottom: 15px;
         }
+        .inside
+        {
+            width: 2%;
+        }
     </style>
 </head>
 <body>
-<h1>Codepolice</h1>
+<h1>C<img class="inside" src="favico.png" alt="Logo Codepolice">deP<img class="inside" src="favico.png" alt="Logo Codepolice">lice</h1>
 <div id="loader" class="nodisplay">
     <span class="loader"><span class="loader-inner"></span></span>
 </div>
