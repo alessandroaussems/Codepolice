@@ -105,4 +105,5 @@ Oplossing:
 - Added frontend/styling to show different results in own box
 - Frontend for stackapi return
 - Added Validation because search cannot be longer than 128chars
+![](_screenshots/git_api_lenght.PNG)
 - Added Error when javascript is not enabled
