@@ -19,7 +19,6 @@ function callAnAPI($url,$iszipped)
 }
 //////////////////////////////////////////////////////////////////GITHUB CALLING BELOW///////////////////////////////////////////////////////////////
 $ACCESTOKEN_GIT=file_get_contents("./oauthcode_git.txt");
-$GITHUB_REPOS=[];
 $NUMBERGITHUBREPOS=0;
 if(isset($_POST["codetocheck"]))
 {
@@ -41,14 +40,9 @@ if(isset($_POST["codetocheck"]))
     //URL TO CALL GITHUB API
     $urlgit = 'https://api.github.com/search/code?q='.urlencode($thecodetocheck).'&access_token='.$ACCESTOKEN_GIT;
     //GET FINAL JSON RESPONSE OF GITHUB REPOS
-    $responsegithuburls = json_decode(callAnAPI($urlgit,false));
-    //ADD ALL GITHUBREPOS URL'S TO ARRAY
-    for($i=0;$i<count($responsegithuburls->items);$i++)
-    {
-        array_push($GITHUB_REPOS, $responsegithuburls->items[$i]->repository->full_name);
-    }
+    $responsegit = json_decode(callAnAPI($urlgit,false));
     //COUNT NUMBER OF GITHUBREPOS
-    $NUMBERGITHUBREPOS=count($GITHUB_REPOS);
+    $NUMBERGITHUBREPOS=$responsegit->total_count;
     //ADDING GITHUB REPOS TO RESPONSEARRAY
     $RESPONSE[0]=$NUMBERGITHUBREPOS;
 

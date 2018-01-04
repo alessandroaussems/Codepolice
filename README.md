@@ -107,3 +107,5 @@ Oplossing:
 - Added Validation because search cannot be longer than 128chars
 ![](_screenshots/git_api_lenght.PNG)
 - Added Error when javascript is not enabled
+- Minder omslachtige manier gevonden om totaal te krijgen bij de github repositories => deze was er al de hele tijd maar was over het hoofd gezien :crying:
+- Manier zoeken om alle STACKvragen te krijgen
