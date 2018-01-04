@@ -79,3 +79,4 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 ### 04/01/2017
 - Added Images in header because it looks nice :tongue:
 - Transparantie in background want deed pijn aan de ogen
+- Structural Fixes
