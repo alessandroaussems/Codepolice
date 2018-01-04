@@ -109,3 +109,5 @@ Oplossing:
 - Added Error when javascript is not enabled
 - Minder omslachtige manier gevonden om totaal te krijgen bij de github repositories => deze was er al de hele tijd maar was over het hoofd gezien :crying:
 - Manier zoeken om alle STACKvragen te krijgen
+- Added Loop trough pages
+- Nu worden alle resultaten van de stack API getoond!

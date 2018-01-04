@@ -51,15 +51,21 @@ if(isset($_POST["codetocheck"]))
     $ACCESTOKEN_STACK=file_get_contents("./oauthcode_stack.txt");
     $STACK_QUESTIONS=[];
     $NUMBEROFQUESTIONS=0;
-    //URL TO CALL STACK API
-    $urlstack = 'http://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&q='.urlencode($thecodetocheck).'&site=stackoverflow&key='.$ACCESTOKEN_STACK;
-    //GET FINAL JSON RESPONSE OF STACK QUESTIONS
-    $stackquestions = json_decode(callAnAPI($urlstack,true));
-    //ADD ALL STACKQUESTIONS URL'S TO ARRAY
-    for($i=0;$i<count($stackquestions->items);$i++)
+    $page=1;
+    do
     {
-        array_push($STACK_QUESTIONS, $stackquestions->items[$i]->user_id);
-    }
+        //URL TO CALL STACK API
+        $urlstack = 'http://api.stackexchange.com/2.2/search/advanced?order=desc&sort=activity&q='.urlencode($thecodetocheck).'&pagesize=100&page='.$page.'&site=stackoverflow&key='.$ACCESTOKEN_STACK;
+        //GET FINAL JSON RESPONSE OF STACK QUESTIONS
+        $stackquestions = json_decode(callAnAPI($urlstack,true));
+        //ADD ALL STACKQUESTIONS URL'S TO ARRAY
+        for($i=0;$i<count($stackquestions->items);$i++)
+        {
+            array_push($STACK_QUESTIONS, $stackquestions->items[$i]->user_id);
+        }
+        $page++;
+    }while($stackquestions->has_more=="true");
+
     //COUNT NUMBER OF STACKQUESTIONS
     $NUMBEROFQUESTIONS=count($STACK_QUESTIONS);
     //ADDING GITHUB REPOS TO RESPONSEARRAY
