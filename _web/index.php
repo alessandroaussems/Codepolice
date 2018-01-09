@@ -188,7 +188,7 @@
 </div>
 <p id="error" class="nodisplay">Error</p>
 <textarea name="code" id="code" rows="15" placeholder="Enter code here!"></textarea>
-<input type="text" id="repo"  placeholder="Enter Githubrepo URL here! If you want to count the forks it has.">
+<input type="text" id="repo"  placeholder="Enter Githubrepo URL here! So we can search a bit more thorough">
 <button id="go" onclick="CheckTheCode()">Check the code!</button>
 <div class="alert nodisplay git">
     <p id="responsetextgitrepo"></p>
@@ -234,7 +234,7 @@
                     console.log(response);
                     var RESPONSE=JSON.parse(response);
                     ShowResponseText("Your code hass occurences in "+RESPONSE[0]+" Github repositories.<br>","gitrepo");
-                    if (RESPONSE[1]!="ZERO")
+                    if(RESPONSE[1]!=0)
                     {
                         ShowResponseText("Your code repository has "+RESPONSE[1]+" fork(s)","gitfork");
                     }

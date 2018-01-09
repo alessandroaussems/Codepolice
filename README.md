@@ -116,4 +116,5 @@ Oplossing:
 - Added Github Pull requests
 https://developer.github.com/v3/pulls/
 - Added Frontend github pull requests
+- Javascript aangepast zodat er geen onnodige vakjes worden getoond als het rsultaat 0 is of er geen url was ingevuld.
 

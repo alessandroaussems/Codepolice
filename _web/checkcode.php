@@ -39,7 +39,8 @@ if(isset($_POST["codetocheck"]))
     }
     else
     {
-        $RESPONSE[1]="ZERO";
+        $RESPONSE[1]=0;
+        $RESPONSE[3]=0;
     }
     //URL TO CALL GITHUB API
     $urlgit = 'https://api.github.com/search/code?q='.urlencode($thecodetocheck).'&access_token='.$ACCESTOKEN_GIT;
