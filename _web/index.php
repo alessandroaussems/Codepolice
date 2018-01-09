@@ -196,6 +196,9 @@
 <div class="alert nodisplay git">
     <p id="responsetextgitfork"></p>
 </div>
+<div class="alert nodisplay git">
+    <p id="responsetextgitpull"></p>
+</div>
 <div class="alert nodisplay stack">
     <p id="responsetextstack"></p>
 </div>
@@ -233,7 +236,11 @@
                     ShowResponseText("Your code hass occurences in "+RESPONSE[0]+" Github repositories.<br>","gitrepo");
                     if (RESPONSE[1]!="ZERO")
                     {
-                        ShowResponseText("Your code repository has "+RESPONSE[1]+" forks","gitfork");
+                        ShowResponseText("Your code repository has "+RESPONSE[1]+" fork(s)","gitfork");
+                    }
+                    if(RESPONSE[3]!=0)
+                    {
+                        ShowResponseText("Your code repository has "+RESPONSE[3]+" pull request(s)!","gitpull");
                     }
                     ShowResponseText("Your code has occurences in "+RESPONSE[2]+" Stack questions.<br>","stack");
                     MakePageReadyForReload();
@@ -257,11 +264,17 @@
             responsetext.innerHTML=texttodisplay;
             document.getElementsByClassName("alert")[1].classList.remove("nodisplay"); //
         }
+        if(sort=="gitpull")
+        {
+            var responsetext=document.getElementById("responsetextgitpull");
+            responsetext.innerHTML=texttodisplay;
+            document.getElementsByClassName("alert")[2].classList.remove("nodisplay"); //
+        }
         if(sort=="stack")
         {
             var responsetext=document.getElementById("responsetextstack");
             responsetext.innerHTML=texttodisplay;
-            document.getElementsByClassName("alert")[2].classList.remove("nodisplay"); //
+            document.getElementsByClassName("alert")[3].classList.remove("nodisplay"); //
         }
     }
     function HideInputField()

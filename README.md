@@ -112,3 +112,8 @@ Oplossing:
 - Added Loop trough pages
 - Nu worden alle resultaten van de stack API getoond!
 - Enhanced LoaderAnimation
+### 09/01/2018
+- Added Github Pull requests
+https://developer.github.com/v3/pulls/
+- Added Frontend github pull requests
+
