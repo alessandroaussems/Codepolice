@@ -75,6 +75,41 @@ if(isset($_POST["codetocheck"]))
     $NUMBEROFQUESTIONS=count($STACK_QUESTIONS);
     //ADDING GITHUB REPOS TO RESPONSEARRAY
     $RESPONSE[2]=$NUMBEROFQUESTIONS;
+    //////////////////////////////////////////////////////////////CALCULATING CHEATVALUE BELOW/////////////////////////////////////////////////////////////
+    $CHEATVALUE=0;
+    if($RESPONSE[1]>5 && $RESPONSE[1]<20)
+    {
+        $CHEATVALUE+=15;
+    }
+    if($RESPONSE[1]>=20 && $RESPONSE[1]<50)
+    {
+        $CHEATVALUE+=20;
+    }
+    if($RESPONSE[1]>=20)
+    {
+        $CHEATVALUE+=25;
+    }
+    if($RESPONSE[0]>1)
+    {
+        $CHEATVALUE+=10;
+    }
+    if($RESPONSE[0]>=5 && $RESPONSE[1]<20)
+    {
+        $CHEATVALUE+=20;
+    }
+    if($RESPONSE[0]>=20)
+    {
+        $CHEATVALUE+=30;
+    }
+    if($RESPONSE[3]>=1)
+    {
+        $CHEATVALUE+=20;
+    }
+    if($RESPONSE[3]>=5)
+    {
+        $CHEATVALUE+=10;
+    }
+    $RESPONSE[10]=$CHEATVALUE;
 
 }
 // ECHO FINAL RESPONSE

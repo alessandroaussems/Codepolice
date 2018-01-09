@@ -231,8 +231,8 @@
                 url: './checkcode.php',
                 data: {codetocheck: code, urltocheck: repoURL.replace("https://github.com/", "")},
                 success: function(response) {
-                    console.log(response);
                     var RESPONSE=JSON.parse(response);
+                    console.log("Cheatvalue:" + RESPONSE[10]);
                     ShowResponseText("Your code hass occurences in "+RESPONSE[0]+" Github repositories.<br>","gitrepo");
                     if(RESPONSE[1]!=0)
                     {
@@ -293,7 +293,6 @@
     function Error(errortext)
     {
         var error=document.getElementById("error");
-        console.log(error);
         error.innerHTML=errortext;
         error.classList.remove("nodisplay");
     }
