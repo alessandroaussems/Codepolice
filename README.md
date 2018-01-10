@@ -125,4 +125,10 @@ http://code.iamkate.com/php/diff-implementation/
 - Counting files in directory
 https://stackoverflow.com/questions/12801370/count-how-many-files-in-directory-php
 - Adding new archived file with just inputted code
+https://www.w3schools.com/php/php_file_create.asp
+- Diff implementation was niet wat ik verwacht had.
+- Nieuw plan:
+https://www.w3schools.com/php/func_string_similar_text.asp
+- Similarity kan weergegeven worden in percentage via de functie.
+- SimilarityArray wordt opgebouwd
 

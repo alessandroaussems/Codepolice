@@ -1,8 +1,6 @@
 <?php
 //INITIATING RESPONSEARRAY
 $RESPONSE=[];
-// include the Diff class
-require_once './class.Diff.php';
 // COUNT FILES IN ARCHIVE
 $directory = "archive/";
 $filecount = 0;
@@ -85,9 +83,18 @@ if(isset($_POST["codetocheck"]))
     //ADDING GITHUB REPOS TO RESPONSEARRAY
     $RESPONSE[2]=$NUMBEROFQUESTIONS;
     //////////////////////////////////////////////////////////////COMPARING WITH ARCHIVE  BELOW/////////////////////////////////////////////////////////////
+    $SIMILARITYARRAY=[];
     $numberoffile=$RESPONSE[5]+=1;
     $newarchivefile= fopen("archive/archived_".$numberoffile.".txt","w");
     fwrite($newarchivefile, $thecodetocheck);
+    for($i=0;$i<$RESPONSE[5]-1;$i++)
+    {
+        $filebase="archive/archived_".$i.".txt";
+        $archivefilecontent=file_get_contents($filebase);
+        similar_text($archivefilecontent,$thecodetocheck,$similarity);
+        array_push($SIMILARITYARRAY,$similarity);
+    }
+    $RESPONSE[12]=$SIMILARITYARRAY;
     //////////////////////////////////////////////////////////////CALCULATING CHEATVALUE BELOW/////////////////////////////////////////////////////////////
     $CHEATVALUE=0;
     if($RESPONSE[1]>5 && $RESPONSE[1]<20)
