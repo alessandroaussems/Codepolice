@@ -1,6 +1,15 @@
 <?php
 //INITIATING RESPONSEARRAY
 $RESPONSE=[];
+// include the Diff class
+require_once './class.Diff.php';
+// COUNT FILES IN ARCHIVE
+$directory = "archive/";
+$filecount = 0;
+$files = glob($directory . "*");
+if ($files){
+    $RESPONSE[5] = count($files);
+}
 //CALL API FUNCTION
 function callAnAPI($url,$iszipped)
 {
@@ -75,6 +84,10 @@ if(isset($_POST["codetocheck"]))
     $NUMBEROFQUESTIONS=count($STACK_QUESTIONS);
     //ADDING GITHUB REPOS TO RESPONSEARRAY
     $RESPONSE[2]=$NUMBEROFQUESTIONS;
+    //////////////////////////////////////////////////////////////COMPARING WITH ARCHIVE  BELOW/////////////////////////////////////////////////////////////
+    $numberoffile=$RESPONSE[5]+=1;
+    $newarchivefile= fopen("archive/archived_".$numberoffile.".txt","w");
+    fwrite($newarchivefile, $thecodetocheck);
     //////////////////////////////////////////////////////////////CALCULATING CHEATVALUE BELOW/////////////////////////////////////////////////////////////
     $CHEATVALUE=0;
     if($RESPONSE[1]>5 && $RESPONSE[1]<20)

@@ -1,0 +1,11 @@
+function WebResearchIsCool($mood)
+{
+	if($mood)
+	{
+	 return true;
+	}
+	else
+	{
+	 return false;
+	}
+}

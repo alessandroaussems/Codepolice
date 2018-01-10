@@ -1,0 +1,9 @@
+$A=5;
+if($A>0)
+{
+echo "A is a positive number";
+}
+if($A<0)
+{
+echo "A is a negative number";
+}

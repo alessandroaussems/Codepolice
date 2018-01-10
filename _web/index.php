@@ -233,6 +233,7 @@
                 success: function(response) {
                     var RESPONSE=JSON.parse(response);
                     console.log("Cheatvalue:" + RESPONSE[10]);
+                    console.log(RESPONSE);
                     ShowResponseText("Your code hass occurences in "+RESPONSE[0]+" Github repositories.<br>","gitrepo");
                     if(RESPONSE[1]!=0)
                     {

@@ -118,4 +118,11 @@ https://developer.github.com/v3/pulls/
 - Added Frontend github pull requests
 - Javascript aangepast zodat er geen onnodige vakjes worden getoond als het rsultaat 0 is of er geen url was ingevuld.
 - Berekenen "Cheatvalue" op basis van de resultaten.
+### 10/01/2018
+- Diff implementation for PHP? 
+http://code.iamkate.com/php/diff-implementation/
+- Added files to "archive"
+- Counting files in directory
+https://stackoverflow.com/questions/12801370/count-how-many-files-in-directory-php
+- Adding new archived file with just inputted code
 
