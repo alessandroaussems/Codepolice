@@ -6,7 +6,7 @@ $directory = "archive/";
 $filecount = 0;
 $files = glob($directory . "*");
 if ($files){
-    $RESPONSE[5] = count($files);
+    $filesinarchive = count($files);
 }
 //CALL API FUNCTION
 function callAnAPI($url,$iszipped)
@@ -41,13 +41,13 @@ if(isset($_POST["codetocheck"]))
         $repopullsurl="https://api.github.com/repos/".$theurltocheck."/pulls?state=all";
         $pulls=json_decode(callAnAPI($repopullsurl,false));
         //COUNTING FORKS AND ADDING THEM TO RESPONSEARRAY
-        $RESPONSE[1]=count($forks);
-        $RESPONSE[3]=count($pulls);
+        $RESPONSE["forks"]=count($forks);
+        $RESPONSE["pulls"]=count($pulls);
     }
     else
     {
-        $RESPONSE[1]=0;
-        $RESPONSE[3]=0;
+        $RESPONSE["forks"]=0;
+        $RESPONSE["pulls"]=0;
     }
     //URL TO CALL GITHUB API
     $urlgit = 'https://api.github.com/search/code?q='.urlencode($thecodetocheck).'&access_token='.$ACCESTOKEN_GIT;
@@ -56,7 +56,7 @@ if(isset($_POST["codetocheck"]))
     //COUNT NUMBER OF GITHUBREPOS
     $NUMBERGITHUBREPOS=$responsegit->total_count;
     //ADDING GITHUB REPOS TO RESPONSEARRAY
-    $RESPONSE[0]=$NUMBERGITHUBREPOS;
+    $RESPONSE["repos"]=$NUMBERGITHUBREPOS;
 
 
 //////////////////////////////////////////////////////////////STACKEXCHANGE CALLING BELOW/////////////////////////////////////////////////////////////
@@ -81,55 +81,55 @@ if(isset($_POST["codetocheck"]))
     //COUNT NUMBER OF STACKQUESTIONS
     $NUMBEROFQUESTIONS=count($STACK_QUESTIONS);
     //ADDING GITHUB REPOS TO RESPONSEARRAY
-    $RESPONSE[2]=$NUMBEROFQUESTIONS;
+    $RESPONSE["questions"]=$NUMBEROFQUESTIONS;
     //////////////////////////////////////////////////////////////COMPARING WITH ARCHIVE  BELOW/////////////////////////////////////////////////////////////
     $SIMILARITYARRAY=[];
-    $numberoffile=$RESPONSE[5]+=1;
+    $numberoffile=$filesinarchive+=1;
     $newarchivefile= fopen("archive/archived_".$numberoffile.".txt","w");
     fwrite($newarchivefile, $thecodetocheck);
-    for($i=0;$i<$RESPONSE[5]-1;$i++)
+    for($i=0;$i<$filesinarchive-1;$i++)
     {
         $filebase="archive/archived_".$i.".txt";
         $archivefilecontent=file_get_contents($filebase);
         similar_text($archivefilecontent,$thecodetocheck,$similarity);
         array_push($SIMILARITYARRAY,$similarity);
     }
-    $RESPONSE[12]=$SIMILARITYARRAY;
+    $RESPONSE["similarityarray"]=$SIMILARITYARRAY;
     //////////////////////////////////////////////////////////////CALCULATING CHEATVALUE BELOW/////////////////////////////////////////////////////////////
     $CHEATVALUE=0;
-    if($RESPONSE[1]>5 && $RESPONSE[1]<20)
+    if($RESPONSE["forks"]>5 && $RESPONSE["forks"]<20)
     {
         $CHEATVALUE+=15;
     }
-    if($RESPONSE[1]>=20 && $RESPONSE[1]<50)
+    if($RESPONSE["forks"]>=20 && $RESPONSE["forks"]<50)
     {
         $CHEATVALUE+=20;
     }
-    if($RESPONSE[1]>=20)
+    if($RESPONSE["forks"]>=20)
     {
         $CHEATVALUE+=25;
     }
-    if($RESPONSE[0]>1)
+    if($RESPONSE["repos"]>1)
     {
         $CHEATVALUE+=10;
     }
-    if($RESPONSE[0]>=5 && $RESPONSE[1]<20)
+    if($RESPONSE["repos"]>=5 && $RESPONSE["repos"]<20)
     {
         $CHEATVALUE+=20;
     }
-    if($RESPONSE[0]>=20)
+    if($RESPONSE["repos"]>=20)
     {
         $CHEATVALUE+=30;
     }
-    if($RESPONSE[3]>=1)
+    if($RESPONSE["pulls"]>=1)
     {
         $CHEATVALUE+=20;
     }
-    if($RESPONSE[3]>=5)
+    if($RESPONSE["pulls"]>=5)
     {
         $CHEATVALUE+=10;
     }
-    $RESPONSE[10]=$CHEATVALUE;
+    $RESPONSE["cheatvalue"]=$CHEATVALUE;
 
 }
 // ECHO FINAL RESPONSE

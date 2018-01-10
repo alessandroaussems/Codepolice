@@ -232,18 +232,18 @@
                 data: {codetocheck: code, urltocheck: repoURL.replace("https://github.com/", "")},
                 success: function(response) {
                     var RESPONSE=JSON.parse(response);
-                    console.log("Cheatvalue:" + RESPONSE[10]);
                     console.log(RESPONSE);
-                    ShowResponseText("Your code hass occurences in "+RESPONSE[0]+" Github repositories.<br>","gitrepo");
-                    if(RESPONSE[1]!=0)
+                    console.log(RESPONSE);
+                    ShowResponseText("Your code hass occurences in "+RESPONSE["repos"]+" Github repositories.<br>","gitrepo");
+                    if(RESPONSE["forks"]!=0)
                     {
-                        ShowResponseText("Your code repository has "+RESPONSE[1]+" fork(s)","gitfork");
+                        ShowResponseText("Your code repository has "+RESPONSE["forks"]+" fork(s)","gitfork");
                     }
-                    if(RESPONSE[3]!=0)
+                    if(RESPONSE["forks"]!=0)
                     {
-                        ShowResponseText("Your code repository has "+RESPONSE[3]+" pull request(s)!","gitpull");
+                        ShowResponseText("Your code repository has "+RESPONSE["pulls"]+" pull request(s)!","gitpull");
                     }
-                    ShowResponseText("Your code has occurences in "+RESPONSE[2]+" Stack questions.<br>","stack");
+                    ShowResponseText("Your code has occurences in "+RESPONSE["questions"]+" Stack questions.<br>","stack");
                     MakePageReadyForReload();
                 }
             })
