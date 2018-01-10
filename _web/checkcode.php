@@ -84,10 +84,8 @@ if(isset($_POST["codetocheck"]))
     $RESPONSE["questions"]=$NUMBEROFQUESTIONS;
     //////////////////////////////////////////////////////////////COMPARING WITH ARCHIVE  BELOW/////////////////////////////////////////////////////////////
     $SIMILARITYARRAY=[];
-    $numberoffile=$filesinarchive+=1;
-    $newarchivefile= fopen("archive/archived_".$numberoffile.".txt","w");
-    fwrite($newarchivefile, $thecodetocheck);
-    for($i=0;$i<$filesinarchive-1;$i++)
+    $RESPONSE["filesinarchive"]=$filesinarchive;
+    for($i=0;$i<$filesinarchive;$i++)
     {
         $filebase="archive/archived_".$i.".txt";
         $archivefilecontent=file_get_contents($filebase);
@@ -95,6 +93,10 @@ if(isset($_POST["codetocheck"]))
         array_push($SIMILARITYARRAY,$similarity);
     }
     $RESPONSE["similarityarray"]=$SIMILARITYARRAY;
+    //ADDING INPUT TO ARCHIVE
+    $numberoffile=$filesinarchive;
+    $newarchivefile= fopen("archive/archived_".$numberoffile.".txt","w");
+    fwrite($newarchivefile, $thecodetocheck);
     //////////////////////////////////////////////////////////////CALCULATING CHEATVALUE BELOW/////////////////////////////////////////////////////////////
     $CHEATVALUE=0;
     if($RESPONSE["forks"]>5 && $RESPONSE["forks"]<20)

@@ -233,7 +233,6 @@
                 success: function(response) {
                     var RESPONSE=JSON.parse(response);
                     console.log(RESPONSE);
-                    console.log(RESPONSE);
                     ShowResponseText("Your code hass occurences in "+RESPONSE["repos"]+" Github repositories.<br>","gitrepo");
                     if(RESPONSE["forks"]!=0)
                     {

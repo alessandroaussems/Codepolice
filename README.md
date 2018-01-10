@@ -132,4 +132,5 @@ https://www.w3schools.com/php/func_string_similar_text.asp
 - Similarity kan weergegeven worden in percentage via de functie.
 - SimilarityArray wordt opgebouwd
 - NameImprovements in RESPONSE array
+- Bugfixing in archivecheck loop
 
