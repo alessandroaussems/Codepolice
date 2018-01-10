@@ -133,4 +133,6 @@ https://www.w3schools.com/php/func_string_similar_text.asp
 - SimilarityArray wordt opgebouwd
 - NameImprovements in RESPONSE array
 - Bugfixing in archivecheck loop
+- Gemiddelde berekenen van percentage similarity
+- Gemmidelde tonen in Frontend hoeveel % code met archief overeenkomt!
 

@@ -168,6 +168,10 @@
         {
             background-color: #F48024;
         }
+        .archive
+        {
+            background-color: #8A32FF;
+        }
         .inside
         {
             width: 2%;
@@ -201,6 +205,9 @@
 </div>
 <div class="alert nodisplay stack">
     <p id="responsetextstack"></p>
+</div>
+<div class="alert nodisplay archive">
+    <p id="responsetextarchive"></p>
 </div>
 <a href="javascript:window.location.reload(true)" class="nodisplay" id="restart">Search Again</a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -236,13 +243,14 @@
                     ShowResponseText("Your code hass occurences in "+RESPONSE["repos"]+" Github repositories.<br>","gitrepo");
                     if(RESPONSE["forks"]!=0)
                     {
-                        ShowResponseText("Your code repository has "+RESPONSE["forks"]+" fork(s)","gitfork");
+                        ShowResponseText("Your code repository has "+RESPONSE["forks"]+" fork(s).","gitfork");
                     }
                     if(RESPONSE["forks"]!=0)
                     {
-                        ShowResponseText("Your code repository has "+RESPONSE["pulls"]+" pull request(s)!","gitpull");
+                        ShowResponseText("Your code repository has "+RESPONSE["pulls"]+" pull request(s).","gitpull");
                     }
                     ShowResponseText("Your code has occurences in "+RESPONSE["questions"]+" Stack questions.<br>","stack");
+                    ShowResponseText("Your code has occurences in "+RESPONSE["avgsimilarity"]+"% of our archive.<br>","archive");
                     MakePageReadyForReload();
                 }
             })
@@ -275,6 +283,12 @@
             var responsetext=document.getElementById("responsetextstack");
             responsetext.innerHTML=texttodisplay;
             document.getElementsByClassName("alert")[3].classList.remove("nodisplay"); //
+        }
+        if(sort=="archive")
+        {
+            var responsetext=document.getElementById("responsetextarchive");
+            responsetext.innerHTML=texttodisplay;
+            document.getElementsByClassName("alert")[4].classList.remove("nodisplay"); //
         }
     }
     function HideInputField()

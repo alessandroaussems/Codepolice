@@ -92,7 +92,8 @@ if(isset($_POST["codetocheck"]))
         similar_text($archivefilecontent,$thecodetocheck,$similarity);
         array_push($SIMILARITYARRAY,$similarity);
     }
-    $RESPONSE["similarityarray"]=$SIMILARITYARRAY;
+    $AVGSIMILARITY=round(array_sum($SIMILARITYARRAY)/count($SIMILARITYARRAY), 2);
+    $RESPONSE["avgsimilarity"]=$AVGSIMILARITY;
     //ADDING INPUT TO ARCHIVE
     $numberoffile=$filesinarchive;
     $newarchivefile= fopen("archive/archived_".$numberoffile.".txt","w");
