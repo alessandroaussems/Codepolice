@@ -9,7 +9,7 @@
     <title>Codepolice V0.1</title>
     <link rel="icon"
           type="image/png"
-          href="favico.png">
+          href="assets/favico.png">
     <style>
         body
         {
@@ -176,13 +176,20 @@
         {
             width: 2%;
         }
+        #gitlink
+        {
+            position: absolute;
+            width: 99.5%;
+            text-align: center;
+            bottom: 0px;
+        }
     </style>
 </head>
 <body>
 <noscript>
     <p id="errorscript">The CodePolice needs Javascript to be enabled to find cheaters!</p>
 </noscript>
-<h1>C<img class="inside" src="favico.png" alt="Logo Codepolice">deP<img class="inside" src="favico.png" alt="Logo Codepolice">lice</h1>
+<h1>C<img class="inside" src="assets/favico.png" alt="Logo Codepolice">deP<img class="inside" src="assets/favico.png" alt="Logo Codepolice">lice</h1>
 <div id="loadertext" class="nodisplay">
     <h3>We are crawling The Internet to find out if there is a cheater among us!</h3>
     <small>Note: Due to the immense size of The Internet this might take a while...</small>
@@ -210,6 +217,7 @@
     <p id="responsetextarchive"></p>
 </div>
 <a href="javascript:window.location.reload(true)" class="nodisplay" id="restart">Search Again</a>
+<a  id="gitlink" href="https://github.com/alessandroaussems/Codepolice" title="CodePolice on Github" target="_blank"><img src="assets/github.png" alt="CodePolice on Github" title="CodePolice on Github"></a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     var textfield=document.getElementById("code");

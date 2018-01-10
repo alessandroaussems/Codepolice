@@ -134,5 +134,6 @@ https://www.w3schools.com/php/func_string_similar_text.asp
 - NameImprovements in RESPONSE array
 - Bugfixing in archivecheck loop
 - Gemiddelde berekenen van percentage similarity
-- Gemmidelde tonen in Frontend hoeveel % code met archief overeenkomt!
+- Gemidelde tonen in Frontend hoeveel % code met archief overeenkomt!
+- Github => Reclame maken
 

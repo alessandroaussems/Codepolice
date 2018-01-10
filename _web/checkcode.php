@@ -94,6 +94,7 @@ if(isset($_POST["codetocheck"]))
     }
     $AVGSIMILARITY=round(array_sum($SIMILARITYARRAY)/count($SIMILARITYARRAY), 2);
     $RESPONSE["avgsimilarity"]=$AVGSIMILARITY;
+    $RESPONSE["similaritarray"]=$SIMILARITYARRAY;
     //ADDING INPUT TO ARCHIVE
     $numberoffile=$filesinarchive;
     $newarchivefile= fopen("archive/archived_".$numberoffile.".txt","w");
