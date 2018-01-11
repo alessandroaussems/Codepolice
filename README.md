@@ -37,7 +37,7 @@ Opdracht Web Research Periode 2 Proof Of Concept.
 - Google Search Code had een handige geweest MAAR! Is opgeheven :pensive:
     * https://nl.wikipedia.org/wiki/Google_Code_Search
 - Toevoegen eerste versie idee in klad
-![](_idee/idee_note_v1.jpg)
+![](_screenshots/idee_note_v1.jpg)
 ### 5/12/2017
 - Uitproberen GithubAPI
 - Aanmaken Accestokens voor API (Anders kan er niet gezocht worden)
@@ -159,3 +159,6 @@ https://github.com/blog/273-github-ribbons
 - Ik kreeg hoofdpijn => Het zal gewone hosting worden :tongue:
 - OPLOSSING: StackKey IS NOT SECRET :facepunch:
 ![](_screenshots/stackkeynotsecret.PNG)
+- GitKey kan nu ook worden gecommit omdat hij public is gemaakt.
+![](_screenshots/gitkeypublic.PNG)
+-Folder sjizlle /docs => githubpages
