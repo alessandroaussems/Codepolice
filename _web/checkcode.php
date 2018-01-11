@@ -4,7 +4,7 @@ $RESPONSE=[];
 // COUNT FILES IN ARCHIVE
 $directory = "archive/";
 $filecount = 0;
-$files = glob($directory . "*");
+$files = glob($directory . "*.txt");
 if ($files){
     $filesinarchive = count($files);
 }
