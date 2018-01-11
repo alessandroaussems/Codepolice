@@ -60,7 +60,7 @@ if(isset($_POST["codetocheck"]))
 
 
 //////////////////////////////////////////////////////////////STACKEXCHANGE CALLING BELOW/////////////////////////////////////////////////////////////
-    $ACCESTOKEN_STACK=file_get_contents("./oauthcode_stack.txt");
+    $ACCESTOKEN_STACK="2NUtnG7HP*0WXQq*1xfMVw(("; //THIS KEY IS JUST FOR HIGHER REQUEST QUOTA IT IS NOT CONSIDERED SECRET
     $STACK_QUESTIONS=[];
     $NUMBEROFQUESTIONS=0;
     $page=1;

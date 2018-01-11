@@ -157,3 +157,5 @@ https://github.com/blog/273-github-ribbons
 - Kijken of het mogelijk was om bepaalde github folders te "hiden"
 - Blijkt onmogelijk te zijn :scream:
 - Ik kreeg hoofdpijn => Het zal gewone hosting worden :tongue:
+- OPLOSSING: StackKey IS NOT SECRET :facepunch:
+![](_screenshots/stackkeynotsecret.PNG)
