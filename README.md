@@ -136,4 +136,8 @@ https://www.w3schools.com/php/func_string_similar_text.asp
 - Gemiddelde berekenen van percentage similarity
 - Gemidelde tonen in Frontend hoeveel % code met archief overeenkomt!
 - Github => Reclame maken
-
+### 11/01/2018
+- Toevoegen Identical array
+- Bestanden in array steken die ressamblance hebben.
+- Bestanden in array tellen
+- Tonen in frontend in hoeveel van de files bijna identiek zijn.

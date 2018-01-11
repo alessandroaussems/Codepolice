@@ -84,17 +84,25 @@ if(isset($_POST["codetocheck"]))
     $RESPONSE["questions"]=$NUMBEROFQUESTIONS;
     //////////////////////////////////////////////////////////////COMPARING WITH ARCHIVE  BELOW/////////////////////////////////////////////////////////////
     $SIMILARITYARRAY=[];
+    $identicalfiles=[];
     $RESPONSE["filesinarchive"]=$filesinarchive;
     for($i=0;$i<$filesinarchive;$i++)
     {
-        $filebase="archive/archived_".$i.".txt";
+        $path="archive/";
+        $file="archived_".$i.".txt";
+        $filebase=$path.$file;
         $archivefilecontent=file_get_contents($filebase);
         similar_text($archivefilecontent,$thecodetocheck,$similarity);
+        if($similarity>=80)
+        {
+            array_push($identicalfiles,$file);
+        }
         array_push($SIMILARITYARRAY,$similarity);
     }
     $AVGSIMILARITY=round(array_sum($SIMILARITYARRAY)/count($SIMILARITYARRAY), 2);
     $RESPONSE["avgsimilarity"]=$AVGSIMILARITY;
     $RESPONSE["similaritarray"]=$SIMILARITYARRAY;
+    $RESPONSE["identicalfiles"]=count($identicalfiles);
     //ADDING INPUT TO ARCHIVE
     $numberoffile=$filesinarchive;
     $newarchivefile= fopen("archive/archived_".$numberoffile.".txt","w");

@@ -172,6 +172,10 @@
         {
             background-color: #8A32FF;
         }
+        .identical
+        {
+            background-color: #FF1E8C;
+        }
         .inside
         {
             width: 2%;
@@ -216,6 +220,9 @@
 <div class="alert nodisplay archive">
     <p id="responsetextarchive"></p>
 </div>
+<div class="alert nodisplay identical">
+    <p id="responsetextidentical"></p>
+</div>
 <a href="javascript:window.location.reload(true)" class="nodisplay" id="restart">Search Again</a>
 <a  id="gitlink" href="https://github.com/alessandroaussems/Codepolice" title="CodePolice on Github" target="_blank"><img src="assets/github.png" alt="CodePolice on Github" title="CodePolice on Github"></a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -248,7 +255,10 @@
                 success: function(response) {
                     var RESPONSE=JSON.parse(response);
                     console.log(RESPONSE);
-                    ShowResponseText("Your code hass occurences in "+RESPONSE["repos"]+" Github repositories.<br>","gitrepo");
+                    if(RESPONSE["repos"]!=0)
+                    {
+                        ShowResponseText("Your code hass occurences in "+RESPONSE["repos"]+" Github repositorie(s).<br>","gitrepo");
+                    }
                     if(RESPONSE["forks"]!=0)
                     {
                         ShowResponseText("Your code repository has "+RESPONSE["forks"]+" fork(s).","gitfork");
@@ -257,8 +267,15 @@
                     {
                         ShowResponseText("Your code repository has "+RESPONSE["pulls"]+" pull request(s).","gitpull");
                     }
-                    ShowResponseText("Your code has occurences in "+RESPONSE["questions"]+" Stack questions.<br>","stack");
+                    if(RESPONSE["questions"]!=0)
+                    {
+                        ShowResponseText("Your code has occurences in "+RESPONSE["questions"]+" Stack questions.<br>","stack");
+                    }
                     ShowResponseText("Your code has occurences in "+RESPONSE["avgsimilarity"]+"% of our archive.<br>","archive");
+                    if(RESPONSE["identicalfiles"]!=0)
+                    {
+                        ShowResponseText("Your code looks almost identical with "+RESPONSE["identicalfiles"]+" files of our archive.","identical")
+                    }
                     MakePageReadyForReload();
                 }
             })
@@ -297,6 +314,12 @@
             var responsetext=document.getElementById("responsetextarchive");
             responsetext.innerHTML=texttodisplay;
             document.getElementsByClassName("alert")[4].classList.remove("nodisplay"); //
+        }
+        if(sort=="identical")
+        {
+            var responsetext=document.getElementById("responsetextidentical");
+            responsetext.innerHTML=texttodisplay;
+            document.getElementsByClassName("alert")[5].classList.remove("nodisplay"); //
         }
     }
     function HideInputField()
