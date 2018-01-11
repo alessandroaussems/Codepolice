@@ -153,8 +153,8 @@
         .alert {
             margin-left: auto;
             margin-right: auto;
-            padding: 20px;
-            margin-top: 50px;
+            padding: 10px;
+            margin-top: 25px;
             width: 50%;
             display: block;
             color: white;
@@ -183,9 +183,8 @@
         #gitlink
         {
             position: absolute;
-            width: 99.5%;
-            text-align: center;
-            bottom: 0px;
+            text-align: right;
+            top: 5px;
         }
     </style>
 </head>
@@ -193,6 +192,7 @@
 <noscript>
     <p id="errorscript">The CodePolice needs Javascript to be enabled to find cheaters!</p>
 </noscript>
+<a  id="gitlink" href="https://github.com/alessandroaussems/Codepolice" title="CodePolice on Github" target="_blank"><img src="assets/github.png" alt="CodePolice on Github" title="CodePolice on Github"></a>
 <h1>C<img class="inside" src="assets/favico.png" alt="Logo Codepolice">deP<img class="inside" src="assets/favico.png" alt="Logo Codepolice">lice</h1>
 <div id="loadertext" class="nodisplay">
     <h3>We are crawling The Internet to find out if there is a cheater among us!</h3>
@@ -224,7 +224,6 @@
     <p id="responsetextidentical"></p>
 </div>
 <a href="javascript:window.location.reload(true)" class="nodisplay" id="restart">Search Again</a>
-<a  id="gitlink" href="https://github.com/alessandroaussems/Codepolice" title="CodePolice on Github" target="_blank"><img src="assets/github.png" alt="CodePolice on Github" title="CodePolice on Github"></a>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
     var textfield=document.getElementById("code");

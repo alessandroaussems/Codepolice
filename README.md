@@ -141,3 +141,4 @@ https://www.w3schools.com/php/func_string_similar_text.asp
 - Bestanden in array steken die ressamblance hebben.
 - Bestanden in array tellen
 - Tonen in frontend in hoeveel van de files bijna identiek zijn.
+- Frontend Tweaks => To many alerts
