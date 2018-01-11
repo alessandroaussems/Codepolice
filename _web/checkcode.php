@@ -38,7 +38,7 @@ if(isset($_POST["codetocheck"]))
         //GET FINAL JSON RESPONSE OF FORKS
         $forks = json_decode(callAnAPI($repourl,false));
 
-        $repopullsurl="https://api.github.com/repos/".$theurltocheck."/pulls?state=all";
+        $repopullsurl="https://api.github.com/repos/".$theurltocheck."/pulls?state=closed";
         $pulls=json_decode(callAnAPI($repopullsurl,false));
         //COUNTING FORKS AND ADDING THEM TO RESPONSEARRAY
         $RESPONSE["forks"]=count($forks);

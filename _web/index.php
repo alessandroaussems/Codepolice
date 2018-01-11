@@ -264,16 +264,16 @@
                     }
                     if(RESPONSE["forks"]!=0)
                     {
-                        ShowResponseText("Your code repository has "+RESPONSE["pulls"]+" pull request(s).","gitpull");
+                        ShowResponseText("Your code repository has "+RESPONSE["pulls"]+" closed pull request(s).","gitpull");
                     }
                     if(RESPONSE["questions"]!=0)
                     {
-                        ShowResponseText("Your code has occurences in "+RESPONSE["questions"]+" Stack questions.<br>","stack");
+                        ShowResponseText("Your code has occurences in "+RESPONSE["questions"]+" Stack question(s).<br>","stack");
                     }
                     ShowResponseText("Your code has occurences in "+RESPONSE["avgsimilarity"]+"% of our archive.<br>","archive");
                     if(RESPONSE["identicalfiles"]!=0)
                     {
-                        ShowResponseText("Your code looks almost identical with "+RESPONSE["identicalfiles"]+" files of our archive.","identical")
+                        ShowResponseText("Your code looks almost identical with "+RESPONSE["identicalfiles"]+" file(s) of our archive.","identical")
                     }
                     MakePageReadyForReload();
                 }
