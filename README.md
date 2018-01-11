@@ -162,3 +162,5 @@ https://github.com/blog/273-github-ribbons
 - GitKey kan nu ook worden gecommit omdat hij public is gemaakt.
 ![](_screenshots/gitkeypublic.PNG)
 -Folder sjizlle /docs => githubpages
+- HAHAHAHAHA Al deze was overbodig want github execute geen php
+https://stackoverflow.com/questions/10837946/how-to-publish-php-page-instead-of-html-at-github-to-demo-some-php-content
