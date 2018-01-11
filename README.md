@@ -143,3 +143,17 @@ https://www.w3schools.com/php/func_string_similar_text.asp
 - Tonen in frontend in hoeveel van de files bijna identiek zijn.
 - Frontend Tweaks => To many alerts
 - Logischer om enkel de "closed" pull request op te vragen => Dus veranderd
+- Research om project online te zetten omdat ik er best trots op ben
+- Github gebruiken als hosting?
+https://help.github.com/articles/using-a-custom-domain-with-github-pages/
+- .com bezet => Nadenken over .be (wou eerst .io maar is belachelijk duur)
+- Uitzoeken of we gebruiker geen toegang kunnen laten hebben tot zekere bestanden zoals bvb archief. We willen niet dat de gebruiker hier het archief kan zien
+https://stackoverflow.com/questions/19118482/deny-access-to-one-specific-folder-in-htaccess/19118529
+- Betere oplossing gevonden voor Github Button
+https://github.com/blog/273-github-ribbons
+- Wat doen met de OAuthTokens als we hosten via github?
+- API keys hosten blijkt vrij moeilijk te zijn
+- Kijken of CDN restrictions mogelijk waren => VERYYYY DIFICUUULT
+- Kijken of het mogelijk was om bepaalde github folders te "hiden"
+- Blijkt onmogelijk te zijn :scream:
+- Ik kreeg hoofdpijn => Het zal gewone hosting worden :tongue:
