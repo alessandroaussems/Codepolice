@@ -99,8 +99,7 @@ if(isset($_POST["codetocheck"]))
         }
         array_push($SIMILARITYARRAY,$similarity);
     }
-    $AVGSIMILARITY=round(array_sum($SIMILARITYARRAY)/count($SIMILARITYARRAY), 2);
-    $RESPONSE["avgsimilarity"]=$AVGSIMILARITY;
+    $RESPONSE["avgsimilarity"]=round(array_sum($SIMILARITYARRAY)/count($SIMILARITYARRAY), 2);
     $RESPONSE["similaritarray"]=$SIMILARITYARRAY;
     $RESPONSE["identicalfiles"]=count($identicalfiles);
     //ADDING INPUT TO ARCHIVE
@@ -117,11 +116,11 @@ if(isset($_POST["codetocheck"]))
     {
         $CHEATVALUE+=20;
     }
-    if($RESPONSE["forks"]>=20)
+    if($RESPONSE["forks"]>=50)
     {
-        $CHEATVALUE+=25;
+        $CHEATVALUE+=30;
     }
-    if($RESPONSE["repos"]>1)
+    if($RESPONSE["repos"]>1 && $RESPONSE["repos"]<5)
     {
         $CHEATVALUE+=10;
     }
@@ -131,15 +130,36 @@ if(isset($_POST["codetocheck"]))
     }
     if($RESPONSE["repos"]>=20)
     {
-        $CHEATVALUE+=30;
+        $CHEATVALUE+=40;
     }
-    if($RESPONSE["pulls"]>=1)
+    if($RESPONSE["pulls"]>=1 && $RESPONSE["pulls"]<5)
     {
-        $CHEATVALUE+=20;
+        $CHEATVALUE+=15;
     }
     if($RESPONSE["pulls"]>=5)
     {
-        $CHEATVALUE+=10;
+        $CHEATVALUE+=20;
+    }
+    if($RESPONSE["avgsimilarity"]>=60 && $RESPONSE["avgsimilarity"]<80)
+    {
+        $CHEATVALUE+=17;
+    }
+    if($RESPONSE["avgsimilarity"]>=80)
+    {
+        $CHEATVALUE+=25;
+    }
+    if($RESPONSE["identicalfiles"]>=1 && $RESPONSE["identicalfiles"] <5)
+    {
+        $CHEATVALUE+=20;
+    }
+    if($CHEATVALUE["identicalfiles"]>=5)
+    {
+        $CHEATVALUE+=50;
+    }
+    //CHEATVALUE IS % SO Can't be bigger than 100
+    if($CHEATVALUE>100)
+    {
+        $CHEATVALUE=100;
     }
     $RESPONSE["cheatvalue"]=$CHEATVALUE;
 

@@ -164,3 +164,18 @@ https://github.com/blog/273-github-ribbons
 - Folder sjizlle /docs => githubpages
 - HAHAHAHAHA Al deze was overbodig want github execute geen php
 https://stackoverflow.com/questions/10837946/how-to-publish-php-page-instead-of-html-at-github-to-demo-some-php-content
+### 12/01/2018
+- Verder berekenen "CheatWaarde"
+- Proberen om met testing uit te zoeken wat de goede "CheatWaarden zijn"
+- Is de StackData een goed idee om mee te nemen in de "cheatwaarde"
+https://meta.stackexchange.com/questions/12527/do-i-have-to-worry-about-copyright-issues-for-code-posted-on-stack-overflow
+=> Creative Commons License
+- Blijkbaar nogal gevoelige zaak, men raad zelfs een advocaat aan
+- Leuk Artikel gevonden, blijkbaar kan het je wel je job kosten
+https://www.theverge.com/tldr/2016/5/4/11593084/dont-get-busted-copying-code-from-stack-overflow
+- De discussie is oneindig:
+https://developers.slashdot.org/story/16/01/15/1437231/use-code-from-stack-overflow-you-must-provide-attribution
+https://www.eurostaffgroup.com/media-hub/how-can-i-use-code-snippets-found-on-stack-overflow-65809/
+https://www.youtube.com/watch?v=FBi3S97R60k
+- Mensen moeten leren dat ze niet zomaar code mogen kopiëren van het internet zonder te weten wat het doet
+![](_screenshots/dontcopycode.PNG)
