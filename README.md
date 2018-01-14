@@ -179,3 +179,10 @@ https://www.eurostaffgroup.com/media-hub/how-can-i-use-code-snippets-found-on-st
 https://www.youtube.com/watch?v=FBi3S97R60k
 - Mensen moeten leren dat ze niet zomaar code mogen kopiëren van het internet zonder te weten wat het doet
 ![](_screenshots/dontcopycode.PNG)
+### 14/01/2018
+- Frontend voor Cheatvalue
+- https://www.webdesignerdepot.com/2014/05/8-simple-css3-transitions-that-will-wow-your-users/
+- Css cirkels
+https://davidwalsh.name/css-circles
+- Css animation cheatvalue
+- Show Cheatvalue in Frontend
