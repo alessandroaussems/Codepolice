@@ -220,4 +220,5 @@ http://php.net/manual/en/function.unlink.php
 - htaccess zodat niet iedereen de cron kan uitvoeren.
 - "Mobile Support" added :iphone:
 https://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery
-- Presentatie gemaakt 
+- Als je populair bent zijn er altijd Copycats
+http://www.codesanta.robbertluit.be/
