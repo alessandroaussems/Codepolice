@@ -218,3 +218,5 @@ https://javascript-minifier.com/
 http://php.net/manual/en/function.unlink.php
 - Script om Archive te clearen gemaakt + cronjob ingesteld
 - htaccess zodat niet iedereen de cron kan uitvoeren.
+- "Mobile Support" added :iphone:
+https://stackoverflow.com/questions/3514784/what-is-the-best-way-to-detect-a-mobile-device-in-jquery

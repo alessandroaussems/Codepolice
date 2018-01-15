@@ -16,8 +16,8 @@
     <meta name="summary" content="CodePolice: Plagiarism checker">
     <meta name="author" content="Alessandro Aussems">
     <meta name="publisher" content="Alessandro Aussems">
-    <meta name="url" content="https://codepolice.be">
-    <meta name="identifier-URL" content="https://codepolice.be">
+    <meta name="url" content="https://codepolice.alessandro.aussems.mtantwerp.eu/">
+    <meta name="identifier-URL" content="https://codepolice.alessandro.aussems.mtantwerp.eu/">
     <meta http-equiv="Expires" content="0">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
@@ -25,8 +25,8 @@
     <meta name="og:title" content="CodePolice: Plagiarism checker"/>
     <meta name="og:site_name" content="CodePolice: Plagiarism checker" />
     <meta property="og:type" content="website" />
-    <meta name="og:url" content="http://codepolice.be"/>
-    <meta name="og:image" content="http://codepolice.be/assets/logo.png"/>
+    <meta name="og:url" content="https://codepolice.alessandro.aussems.mtantwerp.eu/"/>
+    <meta name="og:image" content="https://codepolice.alessandro.aussems.mtantwerp.eu/assets/logo.png"/>
     <meta name="og:site_name" content="CodePolice"/>
     <meta name="og:description" content="CodePolice is a website that finds plagiarism in someone's project. Find copy-paste code and unmask the cheaters you always wanted to find!"/>
 
@@ -34,8 +34,8 @@
     <meta property="twitter:card" content="summary" />
     <meta property="twitter:title" content="CodePolice: Plagiarism checker" />
     <meta property="twitter:description" content="CodePolice is a website that finds plagiarism in someone's project. Find copy-paste code and unmask the cheaters you always wanted to find!" />
-    <meta property="twitter:image" content="http://codepolice.be/assets/logo.png" />
-    <meta property="twitter:url" content="http://codepolice.be" />
+    <meta property="twitter:image" content="https://codepolice.alessandro.aussems.mtantwerp.eu/assets/logo.png" />
+    <meta property="twitter:url" content="https://codepolice.alessandro.aussems.mtantwerp.eu/" />
 
     <title>CodePolice: Plagiarism checker | V0.1</title>
 
@@ -46,6 +46,11 @@
 <noscript>
     <p id="errorscript">The CodePolice needs Javascript to be enabled to find cheaters!</p>
 </noscript>
+<div class="nodisplay" id="mobile">
+<img src="assets/stop.png" alt="Stop" title="Stop">
+    <p>It seems that you are browsing with your phone...Why would you do such thing? CodePolice doesn't work on phones.</p>
+</div>
+<main>
 <div class="circle nodisplay">
     <p id="textcheat">Cheatvalue:</p>
     <p id="cheatvalue">100%</p>
@@ -84,7 +89,9 @@
 </div>
 <a href="javascript:window.location.reload(true)" class="nodisplay" id="restart" title="Search Again">Search Again</a>
 <p id="footer">&copy; <?=date("Y");?> <a href="https://alessandroaussems.be/" target="_blank" title="Alessandro Aussems">Alessandro Aussems</a></p>
+</main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/codechecker.js"></script>
+<script src="assets/mobiler.js"></script>
 </body>
 </html>
