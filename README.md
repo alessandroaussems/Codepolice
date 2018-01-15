@@ -200,3 +200,7 @@ https://www.johnfdoherty.com/meta-descriptions-that-will-not-help-seo/
 - FrontendFixes
 https://codepen.io/cbracco/pen/zekgx
 https://stackoverflow.com/questions/4955122/what-exactly-is-needed-for-margin-0-auto-to-work
+- Functie om error weer te geven op input
+https://stackoverflow.com/questions/1948332/detect-all-changes-to-a-input-type-text-immediately-using-jquery
+https://stackoverflow.com/questions/30806948/javascript-run-function-on-input-change-no-jquery
+- Live error weergeven op codeinput

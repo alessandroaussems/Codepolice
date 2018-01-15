@@ -181,6 +181,10 @@
         {
             display: none !important;
         }
+        .novisibile
+        {
+            opacity: 0 !important;
+        }
         .alert {
             margin-left: auto;
             margin-right: auto;
@@ -289,7 +293,7 @@
 <div id="loader" class="nodisplay">
     <span class="loader"><span class="loader-inner"></span></span>
 </div>
-<p id="error" class="nodisplay">Error</p>
+<p id="error" class="novisibile">Error</p>
 <textarea name="code" id="code" rows="15" placeholder="Enter code here!"></textarea>
 <input type="text" id="repo"  placeholder="Enter Githubrepo URL here! So we can search a bit more thorough">
 <button id="go" onclick="CheckTheCode()">Check the code!</button>
@@ -320,6 +324,12 @@
     var button=document.getElementById("go");
     var loader=document.getElementById("loader");
     var loadertext=document.getElementById("loadertext");
+    textfield.addEventListener("keyup", function (evt) {
+        CodeFieldChanged(evt);
+    }, false);
+    textfield.addEventListener("change", function (evt) {
+        CodeFieldChanged(evt);
+    }, false);
     function CheckTheCode()
     {
         var code= textfield.value;
@@ -428,21 +438,32 @@
     {
         var error=document.getElementById("error");
         error.innerHTML=errortext;
-        error.classList.remove("nodisplay");
+        error.classList.remove("novisibile");
     }
     function ErrorFixed()
     {
         var error=document.getElementById("error");
-        if(!error.classList.contains("nodisplay"))
+        if(!error.classList.contains("novisibile"))
         {
             error.innerHTML="Error";
-            error.classList.add("nodisplay");
+            error.classList.add("novisibile");
         }
     }
     function showCheatvalue(cheatvalue)
     {
         document.getElementsByClassName("circle")[0].classList.remove("nodisplay");
         document.getElementById("cheatvalue").innerHTML=cheatvalue+"%";
+    }
+    function CodeFieldChanged(evt)
+    {
+        if(textfield.value.length>128)
+        {
+            Error("Due to API limitations the code cannot be longer than 128chars");
+        }
+        if(textfield.value.length<128)
+        {
+            ErrorFixed();
+        }
     }
 </script>
 </body>
