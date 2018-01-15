@@ -217,3 +217,4 @@ https://javascript-minifier.com/
 - Removescript schrijven
 http://php.net/manual/en/function.unlink.php
 - Script om Archive te clearen gemaakt + cronjob ingesteld
+- htaccess zodat niet iedereen de cron kan uitvoeren.
