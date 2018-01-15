@@ -52,6 +52,11 @@
             font-weight: bold;
             width: 100%;
             text-align: center;
+            margin-bottom: 0px;
+        }
+        #quote
+        {
+            margin-bottom: 5px;
         }
         h3, small
         {
@@ -188,7 +193,7 @@
         .alert {
             margin-left: auto;
             margin-right: auto;
-            padding: 10px;
+            padding: 7.5px;
             margin-top: 25px;
             width: 50%;
             display: block;
@@ -286,6 +291,7 @@
 </div>
 <a href="https://github.com/alessandroaussems/Codepolice" title="Fork on Github" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/567c3a48d796e2fc06ea80409cc9dd82bf714434/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" title="Fork me on Github" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png"></a>
 <h1>C<img class="inside" src="assets/favico.png" alt="o" title="o">deP<img class="inside" src="assets/favico.png" alt="o" title="o">lice</h1>
+<small id="quote">Plagiarism checker</small>
 <div id="loadertext" class="nodisplay">
     <h3>We are crawling The Internet to find out if there is a cheater among us!</h3>
     <small>Note: Due to the immense size of The Internet this might take a while...</small>
@@ -353,22 +359,16 @@
                 success: function(response) {
                     var RESPONSE=JSON.parse(response);
                     console.log(RESPONSE);
-                    if(RESPONSE["repos"]!=0)
-                    {
-                        ShowResponseText("Your code hass occurences in "+RESPONSE["repos"]+" Github repositorie(s).<br>","gitrepo");
-                    }
+                    ShowResponseText("Your code hass occurences in "+RESPONSE["repos"]+" Github repositorie(s).<br>","gitrepo");
                     if(RESPONSE["forks"]!=0)
                     {
                         ShowResponseText("Your code repository has "+RESPONSE["forks"]+" fork(s).","gitfork");
                     }
-                    if(RESPONSE["forks"]!=0)
+                    if(RESPONSE["pulls"]!=0)
                     {
                         ShowResponseText("Your code repository has "+RESPONSE["pulls"]+" closed pull request(s).","gitpull");
                     }
-                    if(RESPONSE["questions"]!=0)
-                    {
-                        ShowResponseText("Your code has occurences in "+RESPONSE["questions"]+" Stack question(s).<br>","stack");
-                    }
+                    ShowResponseText("Your code has occurences in "+RESPONSE["questions"]+" Stack question(s).<br>","stack");
                     ShowResponseText("Your code has occurences in "+RESPONSE["avgsimilarity"]+"% of our archive.<br>","archive");
                     if(RESPONSE["identicalfiles"]!=0)
                     {
@@ -433,6 +433,7 @@
     function MakePageReadyForReload()
     {
         document.getElementById("restart").classList.remove("nodisplay");
+        document.getElementById("error").classList.add("nodisplay");
     }
     function Error(errortext)
     {

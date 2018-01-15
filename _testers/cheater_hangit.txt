@@ -1,0 +1,2 @@
+var words= ["appel","hond","lepel","kat","auto","fiets","computer","badschuim","konijn","bus","school","webdesign","hoofdje"
+https://github.com/PeeJeeDR/HangIt/

@@ -1,9 +1,2 @@
-$A=5;
-if($A>0)
-{
-echo "A is a positive number";
-}
-if($A<0)
-{
-echo "A is a negative number";
-}
+var words           = ["appel","hond","lepel","kat","auto","fiets","computer","badschuim","konijn","bus","school",
+                       "webdesign","hoofdje","zwengel","chinees","golfclub","polyethyleen","meubel","zaak"];

@@ -1,0 +1,3 @@
+// Count all words inside the file (analyzed string)
+$total = $wordcounter->countTotalWords();
+https://github.com/RobLui/proof_of_concept

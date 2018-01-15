@@ -1,0 +1,6 @@
+var tobeatbank=0;
+var alreadypulled=[];
+var inzetback=0;
+var money=100;
+var card=0;
+https://github.com/alessandroaussems/Blackjack

@@ -93,7 +93,7 @@ if(isset($_POST["codetocheck"]))
         $filebase=$path.$file;
         $archivefilecontent=file_get_contents($filebase);
         similar_text($archivefilecontent,$thecodetocheck,$similarity);
-        if($similarity>=80)
+        if($similarity>=70)
         {
             array_push($identicalfiles,$file);
         }
@@ -110,51 +110,51 @@ if(isset($_POST["codetocheck"]))
     $CHEATVALUE=0;
     if($RESPONSE["forks"]>5 && $RESPONSE["forks"]<20)
     {
-        $CHEATVALUE+=15;
+        $CHEATVALUE=$CHEATVALUE+15;
     }
     if($RESPONSE["forks"]>=20 && $RESPONSE["forks"]<50)
     {
-        $CHEATVALUE+=20;
+        $CHEATVALUE=$CHEATVALUE+20;
     }
     if($RESPONSE["forks"]>=50)
     {
-        $CHEATVALUE+=30;
+        $CHEATVALUE=$CHEATVALUE+30;
     }
     if($RESPONSE["repos"]>1 && $RESPONSE["repos"]<5)
     {
-        $CHEATVALUE+=10;
+        $CHEATVALUE=$CHEATVALUE+10;
     }
     if($RESPONSE["repos"]>=5 && $RESPONSE["repos"]<20)
     {
-        $CHEATVALUE+=20;
+        $CHEATVALUE=$CHEATVALUE+20;
     }
     if($RESPONSE["repos"]>=20)
     {
-        $CHEATVALUE+=40;
+        $CHEATVALUE=$CHEATVALUE+40;
     }
     if($RESPONSE["pulls"]>=1 && $RESPONSE["pulls"]<5)
     {
-        $CHEATVALUE+=15;
+        $CHEATVALUE=$CHEATVALUE+20;
     }
     if($RESPONSE["pulls"]>=5)
     {
-        $CHEATVALUE+=20;
+        $CHEATVALUE=$CHEATVALUE+40;
     }
     if($RESPONSE["avgsimilarity"]>=60 && $RESPONSE["avgsimilarity"]<80)
     {
-        $CHEATVALUE+=17;
+        $CHEATVALUE=$CHEATVALUE+17;
     }
     if($RESPONSE["avgsimilarity"]>=80)
     {
-        $CHEATVALUE+=25;
+        $CHEATVALUE=$CHEATVALUE+25;
     }
     if($RESPONSE["identicalfiles"]>=1 && $RESPONSE["identicalfiles"] <5)
     {
-        $CHEATVALUE+=20;
+        $CHEATVALUE=$CHEATVALUE+20;
     }
     if($CHEATVALUE["identicalfiles"]>=5)
     {
-        $CHEATVALUE+=50;
+        $CHEATVALUE=$CHEATVALUE+50;
     }
     //CHEATVALUE IS % SO Can't be bigger than 100
     if($CHEATVALUE>100)

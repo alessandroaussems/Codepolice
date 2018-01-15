@@ -1,0 +1,3 @@
+$auctions = Auction::where("isactive",1)
+            ->where('buyoutprice',  ">=",  $min)
+https://github.com/alessandroaussems/Landoretti
