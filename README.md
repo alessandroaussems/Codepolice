@@ -186,3 +186,12 @@ https://www.youtube.com/watch?v=FBi3S97R60k
 https://davidwalsh.name/css-circles
 - Css animation cheatvalue
 - Show Cheatvalue in Frontend
+### 15/01/2017
+- Laatste dag! :scream: 
+- Voorbereidingen maken om de website online te zetten.
+- Change documentroot om site online te zetten.
+https://stackoverflow.com/questions/14710314/htaccess-redirect-from-subfolder-to-domain-name
+https://www.siteground.com/kb/how_to_change_my_document_root_folder_using_an_htaccess_file/
+- Root wordt nu aangepast naar de /_web/ directory.
+- SEO fixes
+- Veryyyyyy good: https://gist.github.com/lancejpollard/1978404

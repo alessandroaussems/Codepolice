@@ -1,15 +1,45 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
-    <title>Codepolice V0.1</title>
-    <link rel="icon"
-          type="image/png"
-          href="assets/favico.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="keywords" content="CodePolice,Cheater,Plagiarism,Checker,Code,SearchCode,Copy-Paste"/>
+    <meta name="description" content="CodePolice is a website that finds plagiarism in someone's project. Find copy-paste code and unmask the cheaters you always wanted to find!"/>
+    <meta name="subject" content="CodePolice: Plagiarism checker">
+    <meta name="language" content="EN">
+    <meta name="robots" content="index" />
+    <meta name="topic" content="CodePolice: Plagiarism checker">
+    <meta name="summary" content="CodePolice: Plagiarism checker">
+    <meta name="author" content="Alessandro Aussems">
+    <meta name="publisher" content="Alessandro Aussems">
+    <meta name="url" content="https://codepolice.be">
+    <meta name="identifier-URL" content="https://codepolice.be">
+    <meta http-equiv="Expires" content="0">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <meta name="og:title" content="CodePolice: Plagiarism checker"/>
+    <meta name="og:site_name" content="CodePolice: Plagiarism checker" />
+    <meta property="og:type" content="website" />
+    <meta name="og:url" content="http://codepolice.be"/>
+    <meta name="og:image" content="http://codepolice.be/assets/logo.png"/>
+    <meta name="og:site_name" content="CodePolice"/>
+    <meta name="og:description" content="CodePolice is a website that finds plagiarism in someone's project. Find copy-paste code and unmask the cheaters you always wanted to find!"/>
+
+
+    <meta property="twitter:card" content="summary" />
+    <meta property="twitter:title" content="CodePolice: Plagiarism checker" />
+    <meta property="twitter:description" content="CodePolice is a website that finds plagiarism in someone's project. Find copy-paste code and unmask the cheaters you always wanted to find!" />
+    <meta property="twitter:image" content="http://codepolice.be/assets/logo.png" />
+    <meta property="twitter:url" content="http://codepolice.be" />
+
+    <title>CodePolice: Plagiarism checker | V0.1</title>
+
+    <link rel="icon" type="image/png" href="assets/favico.png">
+    <link rel="canonical" href="http://codepolice.be" />
     <style>
         body
         {
