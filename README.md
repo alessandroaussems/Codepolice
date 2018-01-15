@@ -208,3 +208,9 @@ https://stackoverflow.com/questions/30806948/javascript-run-function-on-input-ch
 - Testing with the testers
 - Some bugs maar over het algemeen een goed resultaat.
 - Werkt blijkbaar niet op andere computer
+- Minify JS & CSS
+https://cssminifier.com/
+https://javascript-minifier.com/
+- Domeinnaam kopen
+- NVM geen domeinnaam gekocht=>Schoolhosting
+- Site staat online!
