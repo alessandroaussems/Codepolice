@@ -22,13 +22,13 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Cache-Control" content="no-cache">
 
-    <meta name="og:title" content="CodePolice: Plagiarism checker"/>
-    <meta name="og:site_name" content="CodePolice: Plagiarism checker" />
+    <meta property="og:title" content="CodePolice: Plagiarism checker"/>
+    <meta property="og:site_name" content="CodePolice: Plagiarism checker" />
     <meta property="og:type" content="website" />
-    <meta name="og:url" content="https://codepolice.alessandro.aussems.mtantwerp.eu/"/>
-    <meta name="og:image" content="https://codepolice.alessandro.aussems.mtantwerp.eu/assets/logo.png"/>
-    <meta name="og:site_name" content="CodePolice"/>
-    <meta name="og:description" content="CodePolice is a website that finds plagiarism in someone's project. Find copy-paste code and unmask the cheaters you always wanted to find!"/>
+    <meta property="og:url" content="https://codepolice.alessandro.aussems.mtantwerp.eu/"/>
+    <meta property="og:image" content="https://codepolice.alessandro.aussems.mtantwerp.eu/assets/logo.png"/>
+    <meta property="og:site_name" content="CodePolice"/>
+    <meta property="og:description" content="CodePolice is a website that finds plagiarism in someone's project. Find copy-paste code and unmask the cheaters you always wanted to find!"/>
 
 
     <meta property="twitter:card" content="summary" />
@@ -37,7 +37,7 @@
     <meta property="twitter:image" content="https://codepolice.alessandro.aussems.mtantwerp.eu/assets/logo.png" />
     <meta property="twitter:url" content="https://codepolice.alessandro.aussems.mtantwerp.eu/" />
 
-    <title>CodePolice: Plagiarism checker | V0.1</title>
+    <title>CodePolice: Plagiarism checker | V1.0</title>
 
     <link rel="icon" type="image/png" href="assets/favico.png">
     <link rel="canonical" href="http://codepolice.be" />
