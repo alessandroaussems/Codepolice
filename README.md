@@ -195,3 +195,8 @@ https://www.siteground.com/kb/how_to_change_my_document_root_folder_using_an_hta
 - Root wordt nu aangepast naar de /_web/ directory.
 - SEO fixes
 - Veryyyyyy good: https://gist.github.com/lancejpollard/1978404
+- Niet alle metatags zijn nuttig:
+https://www.johnfdoherty.com/meta-descriptions-that-will-not-help-seo/
+- FrontendFixes
+https://codepen.io/cbracco/pen/zekgx
+https://stackoverflow.com/questions/4955122/what-exactly-is-needed-for-margin-0-auto-to-work
