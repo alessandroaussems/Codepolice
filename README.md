@@ -214,3 +214,6 @@ https://javascript-minifier.com/
 - Domeinnaam kopen
 - NVM geen domeinnaam gekocht=>Schoolhosting
 - Site staat online!
+- Removescript schrijven
+http://php.net/manual/en/function.unlink.php
+- Script om Archive te clearen gemaakt + cronjob ingesteld
